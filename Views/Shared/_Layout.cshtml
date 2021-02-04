@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Joe Hilton Film Collection</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+</head>
+
+<body>
+    <menu>
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Home" asp-action="MyPodcasts">My Podcasts</a></li>
+            <li><a asp-controller="Home" asp-action="FilmForm">Add A Film</a></li>
+            <li><a asp-controller="Home" asp-action="MovieList">Movie List</a></li>
+        </ul>
+    </menu>
+    <h1>@ViewBag.Title</h1>
+
+    @RenderBody()
+
+    <br />
+    <br />
+    <footer>This worked, Copyright 2021</footer>
+
+</body>
+
+</html>
