@@ -18,17 +18,28 @@
             <!--For loop to put film information into the table-->
             @foreach (FilmCollection.Models.FormResponse x in Model)
             {
-                <tr>
-                    <td>@x.Category</td>
-                    <td>@x.Title</td>
-                    <td>@x.Year</td>
-                    <td>@x.Director</td>
-                    <td>@x.Rating</td>
-                    <td>@x.Edited</td>
-                    <td>@x.Lent</td>
-                    <td>@x.Notes</td>
-                    <td><a asp-action="Update" asp-route-filmname="@x.Title">Update</a></td>
-                </tr>
+            <tr>
+                <td>@x.Category</td>
+                <td>@x.Title</td>
+                <td>@x.Year</td>
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Edited</td>
+                <td>@x.Lent</td>
+                <td>@x.Notes</td>
+                <td>
+                    <form asp-action="EditFilm" method="post">
+                        <input type="hidden" name="FilmId" value="@x.FilmId" />
+                        <button type="submit">Update</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-action="MovieList" method="post">
+                        <input type="hidden" name="FilmId" value="@x.FilmId" />
+                        <button type="submit">Remove</button>
+                    </form>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

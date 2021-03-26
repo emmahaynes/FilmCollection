@@ -64,11 +64,40 @@ namespace FilmCollection.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult MovieList()
         {
-            //return View(TempStorage.Forms.Where(r => r.Title != "Independence Day")); 
-            //excludes Independence Day from displaying
             return View(context.FormResponses);
+        }
+
+        [HttpPost]
+        public IActionResult MovieList(int FilmId)
+        {
+            var movie = context.FormResponses.FirstOrDefault(m => m.FilmId == FilmId);
+            context.FormResponses.Remove(movie);
+            context.SaveChanges();
+            return View(context.FormResponses);
+        }
+
+        [HttpPost]
+        public IActionResult EditFilm(int FilmId)
+        {
+            var movie = context.FormResponses.FirstOrDefault(m => m.FilmId == FilmId);
+            return View("Update", movie);
+        }
+
+
+        [HttpPost]
+        public IActionResult FilmUpdateForm(FormResponse formResponse)
+        {
+            //var movie = context.FormResponses.FirstOrDefault(m => m.FilmId == FilmEditId);
+            if (ModelState.IsValid)
+            {
+                //Update database
+                context.FormResponses.Update(formResponse);
+                context.SaveChanges();
+            }
+            return View("MovieList", context.FormResponses);
         }
 
         public IActionResult Privacy()
