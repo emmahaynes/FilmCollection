@@ -13,25 +13,25 @@ namespace FilmCollection.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
 
 
-        private IFilmsRepository _repository;
+        //private IFilmsRepository _repository;
         private FilmListContext context { get; set; }
 
-        public HomeController(ILogger<HomeController> logger, IFilmsRepository repository, FilmListContext con)
-        {
-            _logger = logger;
-            _repository = repository;
-            context = con;
-        }
-
-
-        ////constructor
-        //public HomeController(FilmListContext con)
+        //public HomeController(ILogger<HomeController> logger, IFilmsRepository repository, FilmListContext con)
         //{
+        //    _logger = logger;
+        //    _repository = repository;
         //    context = con;
         //}
+
+
+        //constructor
+        public HomeController(FilmListContext con)
+        {
+            context = con;
+        }
 
         public IActionResult Index()
         {
@@ -70,24 +70,6 @@ namespace FilmCollection.Controllers
             //excludes Independence Day from displaying
             return View(context.FormResponses);
         }
-
-        //public IActionResult Update(string filmname)
-        //{
-        //    FormResponse film = Repository.AllEmpoyees.Where(e => e.Name == filmname).FirstOrDefault();
-        //    return View(film);
-        //}
-
-        //[HttpPost]
-        //public IActionResult Update(FormResponse film, string filmname)
-        //{
-        //    Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Age = employee.Age;
-        //    Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Salary = employee.Salary;
-        //    Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Department = employee.Department;
-        //    Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Sex = employee.Sex;
-        //    Repository.AllEmpoyees.Where(e => e.Name == empname).FirstOrDefault().Name = employee.Name;
-
-        //    return RedirectToAction("Index");
-        //}
 
         public IActionResult Privacy()
         {
