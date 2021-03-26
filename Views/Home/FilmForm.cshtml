@@ -5,7 +5,11 @@
     ViewBag.Title = "Add A Movie";
 }
 
+<!--Emma Haynes 2.3.21-->
+
 @model FilmCollection.Models.FormResponse
+
+<!--Movie form: data will be sent to tempStorage-->
 
 <form asp-action="FilmForm" method="post">
     <div>
@@ -59,6 +63,6 @@
     </div>
     <br />
     <button type="submit">Submit</button>
-    <div asp-validation-summary="All"></div>
+    <div asp-validation-summary="All"></div> <!--This prints out the errors when submitting-->
 
 </form>

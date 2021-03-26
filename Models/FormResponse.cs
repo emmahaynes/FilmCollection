@@ -4,10 +4,15 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+//Emma Haynes 2.3.21
+
 namespace FilmCollection.Models
 {
+    //Gets and sets each attribute of the form
     public class FormResponse
     {
+        [Key]
+        public int FilmId { get; set; }
         [Required]
         public string Category { get; set; }
         [Required]
