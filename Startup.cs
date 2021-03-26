@@ -26,7 +26,8 @@ namespace FilmCollection
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
+            
+            //use sqlite database
             services.AddDbContext<FilmListContext>(options =>
             {
                 options.UseSqlite(Configuration["ConnectionStrings:FilmListConnection"]);

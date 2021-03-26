@@ -6,26 +6,38 @@
 
 <head>
     <title>The Joel Hilton Film Collection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 
 <body>
     <!--Navigation to all pages-->
-    <menu>
-        <ul>
-            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-            <li><a asp-controller="Home" asp-action="MyPodcasts">My Podcasts</a></li>
-            <li><a asp-controller="Home" asp-action="FilmForm">Add A Film</a></li>
-            <li><a asp-controller="Home" asp-action="MovieList">Movie List</a></li>
-        </ul>
-    </menu>
-    <h1>@ViewBag.Title</h1>
-
-    @RenderBody()
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">@ViewBag.Title</div>
+                <div class="col-6 text-right">
+                    <menu>
+                        <button class="btn-light btn-sm pull-right text-dark"><a asp-controller="Home" asp-action="Index">Home</a></button>
+                        <button class="btn-light btn-sm pull-right text-dark"><a asp-controller="Home" asp-action="MyPodcasts">My Podcasts</a></button>
+                        <button class="btn-light btn-sm pull-right text-dark"><a asp-controller="Home" asp-action="FilmForm">Add A Film</a></button>
+                        <button class="btn-light btn-sm pull-right text-dark"><a asp-controller="Home" asp-action="MovieList">Movie List</a></button>
+                    </menu>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-5">
+        @RenderBody()
+    </div>
 
     <br />
     <br />
-    <footer>This worked, Copyright 2021</footer>
+
+    <div class="p-5">
+        <footer>This worked, Copyright 2021</footer>
+    </div>
 
 </body>
 

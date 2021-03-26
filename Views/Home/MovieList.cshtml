@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-<!--Emma Haynes 2.3.21-->
+<!--Emma Haynes 3.25.21-->
 @{
     ViewBag.Title = "Movie List";
 }
@@ -10,7 +10,7 @@
 
 <div>
     <h2>Here are the movies currently on my list:</h2>
-    <table>
+    <table class="table">
         <thead>
             <tr><th>Category</th><th>Title</th><th>Year</th><th>Director</th><th>Rating</th><th>Edited</th><th>Lent To</th><th>Notes</th></tr>
         </thead>
@@ -28,15 +28,17 @@
                 <td>@x.Lent</td>
                 <td>@x.Notes</td>
                 <td>
+                    <!--Button to update film, passes filmId through hidden field-->
                     <form asp-action="EditFilm" method="post">
                         <input type="hidden" name="FilmId" value="@x.FilmId" />
-                        <button type="submit">Update</button>
+                        <button class="btn-dark btn-sm pull-right text-light" type="submit">Update</button>
                     </form>
                 </td>
                 <td>
+                    <!--Button to remove film, passes filmId through hidden field-->
                     <form asp-action="MovieList" method="post">
                         <input type="hidden" name="FilmId" value="@x.FilmId" />
-                        <button type="submit">Remove</button>
+                        <button class="btn-dark btn-sm pull-right text-light" type="submit">Remove</button>
                     </form>
                 </td>
             </tr>

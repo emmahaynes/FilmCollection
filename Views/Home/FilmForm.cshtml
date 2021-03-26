@@ -11,58 +11,70 @@
 
 <!--Movie form: data will be sent to tempStorage-->
 
-<form asp-action="FilmForm" method="post">
-    <div>
-        <label asp-for="Category">Category:</label>
-        <input asp-for="Category" />
+<form class="form-horizontal" asp-action="FilmForm" method="post">
+    <div class="form-group form-inline">
+        <label class="control-label col-sm-2" asp-for="Category">Category:</label>
+        <div class="col-sm-2">
+            <input class="form-control" asp-for="Category" />
+        </div>
     </div>
-    <br />
-    <div>
-        <label asp-for="Title">Title:</label>
-        <input asp-for="Title" />
+    <div class="form-group form-inline">
+        <label class="control-label col-sm-2" asp-for="Title">Title:</label>
+        <div class="col-sm-3">
+            <input class="form-control" asp-for="Title" />
+        </div>
     </div>
-    <br />
-    <div>
-        <label asp-for="Year">Year:</label>
-        <input asp-for="Year" />
+    <div class="form-group form-inline">
+        <label class="control-label col-sm-2" asp-for="Year">Year:</label>
+        <div class="col-sm-3">
+            <input class="form-control" asp-for="Year" />
+        </div>
     </div>
-    <br />
-    <div>
-        <label asp-for="Director">Director:</label>
-        <input asp-for="Director" />
+    <div class="form-group form-inline">
+        <label class="control-label col-sm-2" asp-for="Director">Director:</label>
+        <div class="col-sm-3">
+            <input class="form-control" asp-for="Director" />
+        </div>
     </div>
-    <br />
-    <div>
-        <label asp-for="Rating">Rating:</label>
-        <select asp-for="Rating">
-            <option value="">Select One</option>
-            <option value="G">G</option>
-            <option value="PG">PG</option>
-            <option value="PG-13">PG-13</option>
-            <option value="R">R</option>
-        </select>
+    <div class="form-group form-inline">
+        <label class="control-label col-sm-2" asp-for="Rating">Rating:</label>
+        <div class="col-sm-3">
+            <select class="form-control" asp-for="Rating">
+                <option value="">Select One</option>
+                <option value="G">G</option>
+                <option value="PG">PG</option>
+                <option value="PG-13">PG-13</option>
+                <option value="R">R</option>
+            </select>
+        </div>
     </div>
-    <br />
-    <div>
-        <label asp-for="Edited">Was the film edited?</label>
-        <select asp-for="Edited">
-            <option value="">Select One</option>
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-        </select>
+    <div class="form-group form-inline">
+        <label class="control-label col-sm-2" asp-for="Edited">Was the film edited?</label>
+        <div class="col-sm-3">
+            <select class="form-control" asp-for="Edited">
+                <option value="">Select One</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
     </div>
-    <br />
-    <div>
-        <label asp-for="Lent">Lent to:</label>
-        <input asp-for="Lent" />
+    <div class="form-group form-inline">
+        <label class="control-label col-sm-2" asp-for="Lent">Lent to:</label>
+        <div class="col-sm-3">
+            <input class="form-control" asp-for="Lent" />
+        </div>
     </div>
-    <br />
-    <div>
-        <label asp-for="Notes">Notes:</label>
-        <input asp-for="Notes" />
+    <div class="form-group form-inline">
+        <label class="control-label col-sm-2" asp-for="Notes">Notes:</label>
+        <div class="col-sm-3">
+            <input class="form-control" asp-for="Notes" />
+        </div>
     </div>
-    <br />
-    <button type="submit">Submit</button>
+    <div class="form-group m-3">
+        <div class="col-sm-offset-2 col-sm-2">
+            <button class="btn btn-dark form-control" type="submit">Submit</button>
+        </div>
+    </div>
     <div asp-validation-summary="All"></div> <!--This prints out the errors when submitting-->
 
 </form>
